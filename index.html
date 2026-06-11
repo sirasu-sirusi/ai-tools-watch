@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIツール料金ウォッチ | 週次更新の料金・機能比較ダッシュボード</title>
+<meta name="description" content="ChatGPT・Claude・Gemini・Copilotなど主要AIツールの料金を週次で追跡する比較ダッシュボード。">
+<style>
+  :root {
+    --bg: #0f1117; --card: #1a1d27; --border: #2a2e3d;
+    --text: #e8eaf0; --muted: #9aa0b4; --accent: #5b8cff; --accent2: #3ddc97;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: "Hiragino Sans", "Yu Gothic UI", "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+  header h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  header .sub { color: var(--muted); font-size: .9rem; margin-bottom: 8px; }
+  .badge { display: inline-block; background: var(--accent2); color: #06281c; font-weight: 700; font-size: .75rem; padding: 2px 10px; border-radius: 99px; }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 12px; }
+  .controls button { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; cursor: pointer; font-size: .85rem; }
+  .controls button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .card h2 { font-size: 1.1rem; }
+  .card .vendor { color: var(--muted); font-size: .8rem; margin-bottom: 8px; }
+  .card .cat { font-size: .72rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: 1px 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 8px; font-size: .85rem; }
+  td { padding: 4px 2px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  td.price { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .free { color: var(--accent2); font-weight: 700; }
+  .plannote { color: var(--muted); font-size: .72rem; }
+  .strengths { font-size: .8rem; color: var(--muted); }
+  footer { margin-top: 32px; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border); padding-top: 16px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🛰 AIツール料金ウォッチ</h1>
+    <p class="sub">主要AIツールの料金・プラン変更を週次で追跡 <span class="badge" id="updated"></span></p>
+  </header>
+
+  <div class="controls" id="filters"></div>
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <p>※価格は各社公式発表ベース(USD/月)。為替・キャンペーンにより実際の請求額は変動します。</p>
+    <p>📬 週次の変更点まとめ・全データの考察は <a href="#" id="note-link">note(準備中)</a> で配信しています。</p>
+  </footer>
+</div>
+
+<script>
+let DATA = { updated: '', tools: [] };
+
+fetch('data/tools.json')
+  .then(r => r.json())
+  .then(d => {
+    DATA = d;
+    document.getElementById('updated').textContent = '最終更新 ' + DATA.updated;
+    buildFilters();
+    render();
+  });
+
+const filters = document.getElementById('filters');
+let current = 'すべて';
+
+function buildFilters() {
+  filters.innerHTML = '';
+  const cats = ['すべて', ...new Set(DATA.tools.map(t => t.category))];
+  cats.forEach(c => {
+    const b = document.createElement('button');
+    b.textContent = c;
+    if (c === current) b.classList.add('active');
+    b.onclick = () => { current = c; render(); filters.querySelectorAll('button').forEach(x => x.classList.toggle('active', x.textContent === c)); };
+    filters.appendChild(b);
+  });
+}
+
+function fmt(p) {
+  if (p.usd === 0) return '<span class="free">無料</span>';
+  let s = '$' + p.usd + '/月';
+  if (p.jpy) s += '(¥' + p.jpy.toLocaleString() + ')';
+  return s;
+}
+
+function render() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  DATA.tools.filter(t => current === 'すべて' || t.category === current).forEach(t => {
+    const rows = t.plans.map(p =>
+      `<tr><td>${p.plan}${p.note ? `<div class="plannote">${p.note}</div>` : ''}</td><td class="price">${fmt(p)}</td></tr>`
+    ).join('');
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="card">
+        <h2>${t.name} <span class="cat">${t.category}</span></h2>
+        <div class="vendor">${t.vendor} ｜ ${t.model}</div>
+        <table>${rows}</table>
+        <div class="strengths">💪 ${t.strengths}</div>
+      </div>`);
+  });
+}
+</script>
+</body>
+</html>

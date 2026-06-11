@@ -1,0 +1,78 @@
+{
+  "updated": "2026-06-11",
+  "note": "価格はUSD/月。日本円プランがある場合はjpyに記載。公式発表ベースで毎週更新する。",
+  "tools": [
+    {
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "category": "汎用チャットAI",
+      "plans": [
+        { "plan": "Free", "usd": 0, "note": "広告表示あり(2026年2月〜)" },
+        { "plan": "Go", "usd": 8, "note": "2026年1月にグローバル展開。広告あり" },
+        { "plan": "Plus", "usd": 20, "note": "" },
+        { "plan": "Pro", "usd": 100, "note": "2026年4月9日に$200から改定・中間プラン化" }
+      ],
+      "model": "GPT-5.5系(2026年5月世代交代)",
+      "strengths": "対話の質・文章生成・エコシステムの広さ"
+    },
+    {
+      "name": "Claude",
+      "vendor": "Anthropic",
+      "category": "汎用チャットAI / コーディング",
+      "plans": [
+        { "plan": "Free", "usd": 0, "note": "" },
+        { "plan": "Pro", "usd": 20, "jpy": 3000, "note": "年払いで$17/月相当" },
+        { "plan": "Max 5x", "usd": 100, "note": "" },
+        { "plan": "Max 20x", "usd": 200, "note": "" }
+      ],
+      "model": "Opus 4.8 / Fable 5(2026年5月世代交代)",
+      "strengths": "長文処理・コーディング(Claude Code)・エージェント"
+    },
+    {
+      "name": "Gemini",
+      "vendor": "Google",
+      "category": "汎用チャットAI",
+      "plans": [
+        { "plan": "Free", "usd": 0, "note": "" },
+        { "plan": "AI Pro", "usd": 19.99, "jpy": 3000, "note": "" },
+        { "plan": "AI Ultra", "usd": 249.99, "note": "初3ヶ月$124.99。Veo動画生成・30TBストレージ込み" }
+      ],
+      "model": "Gemini 3.5系(2026年5月世代交代)",
+      "strengths": "Google製品連携・リサーチ・動画生成(Veo)"
+    },
+    {
+      "name": "Microsoft Copilot",
+      "vendor": "Microsoft",
+      "category": "Office統合AI",
+      "plans": [
+        { "plan": "Free", "usd": 0, "note": "" },
+        { "plan": "M365 Personal同梱", "usd": 19.99, "note": "Word/Excel/PowerPoint+OneDrive 1TB込み" }
+      ],
+      "model": "GPT系+独自",
+      "strengths": "Office文書との統合。単体課金不要でM365に同梱"
+    },
+    {
+      "name": "Perplexity",
+      "vendor": "Perplexity AI",
+      "category": "AI検索",
+      "plans": [
+        { "plan": "Free", "usd": 0, "note": "" },
+        { "plan": "Pro", "usd": 20, "note": "" }
+      ],
+      "model": "複数モデル選択式",
+      "strengths": "出典付き検索・リサーチ"
+    },
+    {
+      "name": "Midjourney",
+      "vendor": "Midjourney",
+      "category": "画像生成",
+      "plans": [
+        { "plan": "Basic", "usd": 10, "note": "" },
+        { "plan": "Standard", "usd": 30, "note": "" },
+        { "plan": "Pro", "usd": 60, "note": "" }
+      ],
+      "model": "独自",
+      "strengths": "画像品質・スタイル制御"
+    }
+  ]
+}
