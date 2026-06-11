@@ -23,10 +23,11 @@
         { "plan": "Free", "usd": 0, "note": "" },
         { "plan": "Pro", "usd": 20, "jpy": 3000, "note": "年払いで$17/月相当" },
         { "plan": "Max 5x", "usd": 100, "note": "" },
-        { "plan": "Max 20x", "usd": 200, "note": "" }
+        { "plan": "Max 20x", "usd": 200, "note": "" },
+        { "plan": "Fable 5(API)", "usd": 10, "note": "入力$10/出力$50(100万トークン)。6/22までPro/Maxは追加料金なし、6/23〜クレジット制" }
       ],
-      "model": "Opus 4.8 / Fable 5(2026年5月世代交代)",
-      "strengths": "長文処理・コーディング(Claude Code)・エージェント"
+      "model": "Fable 5(6/9リリース・Mythos級) / Opus 4.8",
+      "strengths": "長文処理・コーディング(Claude Code)・エージェント。Fable 5はSWE-bench Pro 80.3%で現行最高"
     },
     {
       "name": "Gemini",
