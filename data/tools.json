@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-11",
+  "updated": "2026-06-13",
   "note": "価格はUSD/月。日本円プランがある場合はjpyに記載。公式発表ベースで毎週更新する。",
   "tools": [
     {
@@ -35,8 +35,9 @@
       "category": "汎用チャットAI",
       "plans": [
         { "plan": "Free", "usd": 0, "note": "" },
+        { "plan": "AI Plus", "usd": 4.99, "note": "6/9に$7.99から値下げ(米国)。ストレージ200GB→400GBに倍増。日本価格は未発表" },
         { "plan": "AI Pro", "usd": 19.99, "jpy": 3000, "note": "" },
-        { "plan": "AI Ultra", "usd": 249.99, "note": "初3ヶ月$124.99。Veo動画生成・30TBストレージ込み" }
+        { "plan": "AI Ultra", "usd": 200, "note": "$250から値下げ(I/O 2026)。開発者向け$100版も新設。Veo動画生成込み" }
       ],
       "model": "Gemini 3.5系(2026年5月世代交代)",
       "strengths": "Google製品連携・リサーチ・動画生成(Veo)"
