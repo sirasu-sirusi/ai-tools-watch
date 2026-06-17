@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-13",
+  "updated": "2026-06-17",
   "note": "価格はUSD/月。日本円プランがある場合はjpyに記載。公式発表ベースで毎週更新する。",
   "tools": [
     {
@@ -10,7 +10,7 @@
         { "plan": "Free", "usd": 0, "note": "広告表示あり(2026年2月〜)" },
         { "plan": "Go", "usd": 8, "note": "2026年1月にグローバル展開。広告あり" },
         { "plan": "Plus", "usd": 20, "note": "" },
-        { "plan": "Pro", "usd": 100, "note": "2026年4月9日に$200から改定・中間プラン化" }
+        { "plan": "Pro", "usd": 100, "note": "2026年4月9日に$200から改定・中間プラン化。Plus比5×制限。6/1に試用期間中の増量サービス終了・通常制限に戻る" }
       ],
       "model": "GPT-5.5系(2026年5月世代交代)",
       "strengths": "対話の質・文章生成・エコシステムの広さ"
@@ -59,7 +59,8 @@
       "category": "AI検索",
       "plans": [
         { "plan": "Free", "usd": 0, "note": "" },
-        { "plan": "Pro", "usd": 20, "note": "" }
+        { "plan": "Pro", "usd": 20, "note": "" },
+        { "plan": "Max", "usd": 200, "note": "2025年7月追加。GPT-5.4+Opus 4.8など無制限、無制限高度検索、Labsアーリーアクセス" }
       ],
       "model": "複数モデル選択式",
       "strengths": "出典付き検索・リサーチ"
@@ -69,9 +70,10 @@
       "vendor": "Midjourney",
       "category": "画像生成",
       "plans": [
-        { "plan": "Basic", "usd": 10, "note": "" },
-        { "plan": "Standard", "usd": 30, "note": "" },
-        { "plan": "Pro", "usd": 60, "note": "" }
+        { "plan": "Basic", "usd": 10, "note": "Fast GPU 3.3時間相当・200生成" },
+        { "plan": "Standard", "usd": 30, "note": "Fast GPU 15時間+Relaxモード無制限" },
+        { "plan": "Pro", "usd": 60, "note": "Fast GPU 30時間+ステルスモード" },
+        { "plan": "Mega", "usd": 120, "note": "Fast GPU 60時間+ステルスモード+全機能" }
       ],
       "model": "独自",
       "strengths": "画像品質・スタイル制御"
