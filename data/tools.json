@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08",
+  "updated": "2026-07-15",
   "note": "価格はUSD/月。日本円プランがある場合はjpyに記載。公式発表ベースで毎週更新する。",
   "tools": [
     {
@@ -12,8 +12,8 @@
         { "plan": "Plus", "usd": 20, "note": "" },
         { "plan": "Pro", "usd": 100, "note": "2026年4月9日に$200から改定・中間プラン化。Plus比5×制限。6/1に試用期間中の増量サービス終了・通常制限に戻る" }
       ],
-      "model": "GPT-5.5系(2026年5月世代交代)",
-      "strengths": "対話の質・文章生成・エコシステムの広さ"
+      "model": "GPT-5.6(Sol/Terra/Luna、7/9公開)",
+      "strengths": "対話の質・文章生成・エコシステムの広さ。7/9にGPT-5.6(Sol/Terra/Luna三段構成)が公開、「ChatGPT Work」も新設。料金プラン自体は据え置き"
     },
     {
       "name": "Claude",
@@ -24,7 +24,7 @@
         { "plan": "Pro", "usd": 20, "jpy": 3000, "note": "年払いで$17/月相当" },
         { "plan": "Max 5x", "usd": 100, "note": "" },
         { "plan": "Max 20x", "usd": 200, "note": "" },
-        { "plan": "Fable 5(API)", "usd": 10, "note": "入力$10/出力$50(100万トークン)。【7/7→7/12に延長】当初7/7までサブスク内(週次上限50%分)で無償利用可だったが、7/12まで延長。延長後もクレジット課金は一時的な処置と説明されており、容量確保でき次第サブスク復帰予定" }
+        { "plan": "Fable 5(API)", "usd": 10, "note": "入力$10/出力$50(100万トークン)。【7/7→7/12→7/19に再延長】サブスク内無償利用(週次上限50%分)の期限が3週連続で延長され、現在は7/19 23:59 PTまで無料。クレジット課金は依然「一時的な容量対策」と説明" }
       ],
       "model": "Fable 5(6/9リリース・7/1〜グローバル復活) / Opus 4.8",
       "strengths": "長文処理・コーディング(Claude Code)・エージェント。Fable 5はSWE-bench Pro 80.3%で現行最高"
@@ -48,10 +48,10 @@
       "category": "Office統合AI",
       "plans": [
         { "plan": "Free", "usd": 0, "note": "" },
-        { "plan": "M365 Personal同梱", "usd": 19.99, "note": "Word/Excel/PowerPoint+OneDrive 1TB込み" }
+        { "plan": "M365 Personal同梱", "usd": 19.99, "note": "Word/Excel/PowerPoint+OneDrive 1TB込み。個人向けは今回の改定対象外" }
       ],
       "model": "GPT系+独自",
-      "strengths": "Office文書との統合。単体課金不要でM365に同梱"
+      "strengths": "Office文書との統合。単体課金不要でM365に同梱。※7/1に法人向けM365価格を最大5〜43%改定、Copilot Business単体は$18→$21に値上げ(個人プランは据え置き)"
     },
     {
       "name": "Perplexity",
@@ -63,7 +63,7 @@
         { "plan": "Max", "usd": 200, "note": "2025年7月追加。GPT-5.4+Opus 4.8など無制限、無制限高度検索、Labsアーリーアクセス" }
       ],
       "model": "複数モデル選択式",
-      "strengths": "出典付き検索・リサーチ"
+      "strengths": "出典付き検索・リサーチ。料金据え置きだが検索回数の上限方式が「1日300件超」の固定枠から週次上限に変更"
     },
     {
       "name": "Midjourney",
